@@ -4,7 +4,6 @@ const Schedule = require('./Schedule');
 const Tag = require('./Tag');
 
 class Event extends Model {
-  // O validateDates do @PrePersist/@PreUpdate
   static associate(models) {
     this.belongsTo(models.Schedule, { foreignKey: 'scheduleId', as: 'schedule' });
     this.belongsToMany(models.Tag, { through: 'event_tag', foreignKey: 'eventId', as: 'tags' });

@@ -9,15 +9,14 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/v1', apiRoutes);
+app.use('/aplication', apiRoutes);
 
-// Ponto de entrada
 const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log('Database connection has been established successfully.');
     
-    await syncDatabase(); // Sincroniza os modelos com o banco de dados
+    await syncDatabase(); 
     
     app.listen(PORT, () => {
       console.log(`Server is running on http://localhost:${PORT}`);

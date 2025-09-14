@@ -21,7 +21,6 @@ Schedule.init({
   timestamps: false,
 });
 
-// Associações
 Schedule.belongsTo(User, { foreignKey: 'ownerId', as: 'owner' });
 Schedule.belongsToMany(User, { through: 'user_schedule', foreignKey: 'scheduleId', as: 'participants' });
 Schedule.hasMany(Event, { foreignKey: 'scheduleId', as: 'events' });

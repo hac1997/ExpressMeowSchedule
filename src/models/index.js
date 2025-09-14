@@ -13,13 +13,9 @@ const models = {
   Tag
 };
 
-// Configura as associações aqui ou em cada arquivo de modelo
-// (Já fizemos em cada arquivo, então este arquivo é principalmente para exportação e sincronização)
-
-// Sincroniza os modelos com o banco de dados
 const syncDatabase = async () => {
   try {
-    await sequelize.sync({ alter: true }); // 'alter: true' atualiza o schema sem perder dados
+    await sequelize.sync({ alter: true }); 
     console.log('Database synced successfully.');
   } catch (error) {
     console.error('Error syncing database:', error);

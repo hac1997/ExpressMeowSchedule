@@ -29,7 +29,7 @@ const ScheduleService = {
     }
     const hasAccess = await this.verifyOwnerId(authRequest.userId, authRequest.email, authRequest.passwd);
     if (!hasAccess || schedule.owner.userId !== authRequest.userId) {
-      throw new Error("U DONT HAVE ACCESS TO THIS");
+      throw new Error("YOU DONT HAVE ACCESS TO THIS");
     }
     schedule.name = name;
     return schedule.save();
@@ -44,7 +44,7 @@ const ScheduleService = {
     if (hasAccess && schedule.owner.userId === authRequest.userId) {
       await schedule.destroy();
     } else {
-      throw new Error("U DONT HAVE ACCESS TO THIS");
+      throw new Error("YOU DONT HAVE ACCESS TO THIS");
     }
   },
 };

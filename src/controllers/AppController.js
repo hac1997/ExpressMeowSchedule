@@ -5,7 +5,9 @@ const EventService = require('../services/EventService');
 const TagService = require('../services/TagService');
 
 const AppController = {
-  // Rotas de Schedule
+
+
+  //Schedule
   async addSchedule(req, res) {
     try {
       const { ownerId, name } = req.query;
@@ -38,7 +40,11 @@ const AppController = {
     }
   },
 
-  // Rotas de Group
+
+
+
+
+  //Group
   async addGroup(req, res) {
     try {
       const { ownerId, name } = req.query;
@@ -89,7 +95,10 @@ const AppController = {
     }
   },
 
-  // Rotas de Tag
+
+
+
+  // Tag
   async addTag(req, res) {
     try {
       const { name } = req.query;
@@ -120,7 +129,10 @@ const AppController = {
     }
   },
   
-  // Rotas de Event
+
+
+
+  //Event
   async addEvent(req, res) {
     try {
       const { scheduleId, title, description, startTime, endTime, tagIds } = req.query;
@@ -152,7 +164,6 @@ const AppController = {
     }
   },
   
-  // Rotas de User (já estão no UserService)
   async addUser(req, res) {
     try {
       const { name, email, passwordHash } = req.body;

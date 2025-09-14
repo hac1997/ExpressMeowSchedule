@@ -33,7 +33,7 @@ const EventService = {
   
     const hasAccess = event.schedule.participants.some(user => user.id === participantId);
     if (!hasAccess) {
-      throw new Error("U DONT HAVE ACCESS TO THIS");
+      throw new Error("YOU DONT HAVE ACCESS TO THIS");
     }
   
     const newTags = await Tag.findAll({ where: { id: newTagIds } });

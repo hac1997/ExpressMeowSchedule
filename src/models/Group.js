@@ -20,7 +20,6 @@ Group.init({
   timestamps: false,
 });
 
-// Associações
 Group.belongsToMany(User, { through: 'group_members', foreignKey: 'groupId', as: 'members' });
 
 module.exports = Group;
